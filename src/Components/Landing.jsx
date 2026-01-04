@@ -67,7 +67,7 @@ const projects = [
     instagram: "https://instagram.com/nowucme.in",
     linkedin: "https://linkedin.com/company/nowucme",
     image: "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767514079/form_photo_zgbjmb.png", // Add NowUCme landing page screenshot URL here
-    bgImage: "" // Add background image URL here
+    bgImage: "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767514079/form_photo_zgbjmb.png" // Add background image URL here
   },
   {
     id: 2,

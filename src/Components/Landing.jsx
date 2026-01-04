@@ -66,8 +66,8 @@ const projects = [
     website: "https://nowucme.in",
     instagram: "https://instagram.com/nowucme.in",
     linkedin: "https://linkedin.com/company/nowucme",
-    image: "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767514079/form_photo_zgbjmb.png", // Add NowUCme landing page screenshot URL here
-    bgImage: "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767514079/form_photo_zgbjmb.png" // Add background image URL here
+    image: "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767514079/form_photo_zgbjmb.png", 
+    bgImage: "" 
   },
   {
     id: 2,
@@ -79,8 +79,8 @@ const projects = [
     website: "https://availible.in",
     instagram: "https://instagram.com/availible.in_",
     linkedin: "https://linkedin.com/company/availible",
-    image: "", // Add Availible landing page screenshot URL here
-    bgImage: "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767514089/Screenshot_2025-12-27_153050_fmc6p8.png" // Add background image URL here
+    image: "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767514089/Screenshot_2025-12-27_153050_fmc6p8.png", 
+    bgImage: "" 
   }
 ];
 
@@ -330,7 +330,6 @@ const Landing = () => {
               </span>
             </div>
 
-            {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
               {[
                 "About",
@@ -352,7 +351,6 @@ const Landing = () => {
               ))}
             </div>
 
-            {/* Mobile Menu Button */}
             <button
               className="md:hidden"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -574,7 +572,6 @@ const Landing = () => {
       </section>
 
      
-      {/* Projects Section - Full Page Scroll Snap */}
       <section id="projects" className="snap-y snap-mandatory md:h-screen md:overflow-y-scroll">
         {projects.map((project, index) => (
           <div 
@@ -587,12 +584,10 @@ const Landing = () => {
               backgroundColor: project.bgImage ? 'transparent' : (index % 2 === 0 ? '#f9fafb' : '#ffffff')
             }}
           >
-            {/* Overlay for better text readability */}
             {project.bgImage && <div className="absolute inset-0 bg-black/60 md:bg-black/50" />}
             
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
               <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-                {/* Project Image/Mockup */}
                 <div className="order-2 md:order-1">
                   {project.image ? (
                     <div className="rounded-xl md:rounded-2xl overflow-hidden shadow-xl md:shadow-2xl border-2 md:border-4 border-white">
@@ -609,7 +604,6 @@ const Landing = () => {
                   )}
                 </div>
 
-                {/* Project Details */}
                 <div className={`order-1 md:order-2 ${project.bgImage ? 'text-white' : 'text-[#101827]'}`}>
                   <div className="flex flex-wrap items-center gap-3 md:gap-4 mb-4 md:mb-6">
                     <span className={`px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-bold ${

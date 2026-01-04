@@ -62,10 +62,10 @@ const projects = [
     problem: "People at events and public places find it difficult to connect with nearby like-minded individuals without awkward introductions.",
     solution: "A location-based social discovery platform that allows users to connect with nearby people when both enable Discover mode, featuring user profiles and social media link sharing.",
     status: "MVP",
-    team: "IEDC CEC – Student Startup",
+    team: "Faseen Anvar – Founder & CTO (IEDC CEC)",
     website: "https://nowucme.in",
     instagram: "https://instagram.com/nowucme.in",
-    linkedin: "https://linkedin.com/company/nowucme",
+    linkedin: "https://www.linkedin.com/company/nowucme-official/",
     image: "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767514079/form_photo_zgbjmb.png", 
     bgImage: "" 
   },
@@ -75,7 +75,7 @@ const projects = [
     problem: "Students often struggle to find affordable second-hand books within their campus, while many useful books remain unused after each semester, leading to unnecessary expenses and limited access to study resources.",
     solution: "A community-based, CEC-exclusive platform that enables students to easily buy and sell second-hand books within the campus, making book discovery simpler, more affordable, and locally accessible.",
     status: "MVP",
-    team: "3rd Year CSE",
+    team: "Faseen Anvar – Founder & CTO (IEDC CEC)",
     website: "https://availible.in",
     instagram: "https://instagram.com/availible.in_",
     linkedin: "https://linkedin.com/company/availible",
@@ -249,12 +249,42 @@ const team = [
 ];
 
 const gallery = [
-  { id: 1, category: "Events", alt: "Startup pitch competition" },
-  { id: 2, category: "Workshops", alt: "Design thinking workshop" },
-  { id: 3, category: "Team", alt: "IEDC team meeting" },
-  { id: 4, category: "Events", alt: "Innovation summit keynote" },
-  { id: 5, category: "Workshops", alt: "Coding bootcamp session" },
-  { id: 6, category: "Team", alt: "Team brainstorming session" },
+  { 
+    id: 1, 
+    category: "Events", 
+    alt: "Startup pitch competition",
+    image: "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767546323/WhatsApp_Image_2026-01-04_at_10.33.55_PM_1_rom5kr.jpg"
+  },
+  { 
+    id: 2, 
+    category: "Events", 
+    alt: "Startup pitch competition",
+    image: "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767546322/WhatsApp_Image_2026-01-04_at_10.33.55_PM_2_jln5qh.jpg"
+  },
+  { 
+    id: 3, 
+    category: "Events", 
+    alt: "Startup pitch competition",
+    image: "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767546323/WhatsApp_Image_2026-01-04_at_10.33.55_PM_w34xvf.jpg"
+  },
+  { 
+    id: 4, 
+    category: "Events", 
+    alt: "Startup pitch competition",
+    image: "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767546323/WhatsApp_Image_2026-01-04_at_10.34.05_PM_abr3bw.jpg"
+  },
+  { 
+    id: 5, 
+    category: "Events", 
+    alt: "Startup pitch competition",
+    image: "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767546323/WhatsApp_Image_2026-01-04_at_10.34.04_PM_tkmf5z.jpg"
+  },
+  { 
+    id: 6, 
+    category: "Events", 
+    alt: "Startup pitch competition",
+    image: "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767547238/WhatsApp_Image_2026-01-04_at_10.50.13_PM_nr0wuu.jpg"
+  }
 ];
 
 const Landing = () => {
@@ -772,27 +802,30 @@ const Landing = () => {
         `}</style>
       </section>
 
-      {/* Gallery Section */}
+     {/* Gallery Section */}
       <section id="gallery" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#101827] mb-12 text-center">
-            Gallery
-          </h2>
-
+          <h2 className="text-4xl md:text-5xl font-bold text-[#101827] mb-12 text-center">Gallery</h2>
+          
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {gallery.map((image) => (
-              <div
-                key={image.id}
-                className="relative aspect-square bg-gradient-to-br from-gray-300 to-gray-400 rounded-xl overflow-hidden hover:scale-105 transition-transform cursor-pointer group"
-              >
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Award className="h-16 w-16 text-white opacity-50 group-hover:opacity-75 transition-opacity" />
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
-                  <p className="text-white text-sm font-semibold">
-                    {image.category}
-                  </p>
-                  <p className="text-white/80 text-xs">{image.alt}</p>
+            {gallery.map(item => (
+              <div key={item.id} className="relative aspect-square rounded-xl overflow-hidden hover:scale-105 transition-transform cursor-pointer group shadow-md">
+                {item.image ? (
+                  <img 
+                    src={item.image} 
+                    alt={item.alt}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
+                    <Award className="h-16 w-16 text-white opacity-50" />
+                  </div>
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end">
+                  <div className="p-4 w-full">
+                    <p className="text-white text-sm font-semibold">{item.category}</p>
+                    <p className="text-white/90 text-xs">{item.alt}</p>
+                  </div>
                 </div>
               </div>
             ))}

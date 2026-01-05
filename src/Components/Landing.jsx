@@ -17,7 +17,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 
-// Mock Data
+
 const events = [
   {
     id: 1,
@@ -93,6 +93,8 @@ const team = [
     year: "Professor",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767509749/WhatsApp_Image_2026-01-04_at_12.52.07_AM_tjgndg.jpg",
+    linkedin: "",
+    instagram: "",
   },
   {
     id: 2,
@@ -102,6 +104,8 @@ const team = [
     year: "4th Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767456655/IMG_7096_-_Luthfi_Tp_qdfbt1.jpg",
+    linkedin: "",
+    instagram: "",
   },
   {
     id: 3,
@@ -111,6 +115,8 @@ const team = [
     year: "4th Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767456668/InShot_20251231_003554120_wsdprm.jpg",
+    linkedin: "https://www.linkedin.com/in/faseen-anvar-09058a275",
+    instagram: "https://www.instagram.com/f.azy__",
   },
   {
     id: 4,
@@ -120,6 +126,8 @@ const team = [
     year: "3rd Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767456656/asif_id_card_-_ASIF_SUBAIR_uxjovh.jpg",
+    linkedin: "https://www.linkedin.com/in/asif-subair-63423b293",
+    instagram: "https://www.instagram.com/_.asif._.ns._",
   },
   {
     id: 5,
@@ -129,6 +137,8 @@ const team = [
     year: "4th Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767456670/IMG-20250405-WA0033_-_Anntheres_Thomas_xcthrv.jpg",
+    linkedin: "",
+    instagram: "",
   },
   {
     id: 6,
@@ -138,6 +148,8 @@ const team = [
     year: "4th Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767456680/1000331524_-_Film_d3wqhw.jpg",
+    linkedin: "https://www.linkedin.com/in/athul-p-86b286255",
+    instagram: "https://www.instagram.com/_athul._10",
   },
   {
     id: 7,
@@ -147,6 +159,8 @@ const team = [
     year: "4th Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767456665/IMG-20250325-WA0072_1_-_Elisha_Varghese_mk1964.jpg",
+    linkedin: "https://www.linkedin.com/in/elisha-varghese-429431256",
+    instagram: "https://www.instagram.com/_.elishaaa_",
   },
   {
     id: 8,
@@ -156,6 +170,8 @@ const team = [
     year: "3rd Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767456674/IMG-20250607-WA0262_-_Mohammed_Ashkar_N.A_evr6s7.jpg",
+    linkedin: "https://www.linkedin.com/in/mohammed-ashkar-62400a267",
+    instagram: "https://www.instagram.com/ashkar.ashrf",
   },
   {
     id: 9,
@@ -165,6 +181,8 @@ const team = [
     year: "4th Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767456659/IMG-20240410-WA0015_-_Reshmi_S_Panicker_byqynp.jpg",
+    linkedin: "",
+    instagram: "https://www.instagram.com/__sreekutttyy__",
   },
   {
     id: 10,
@@ -174,6 +192,8 @@ const team = [
     year: "4th Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767456656/IMG_20250531_231846_-_Saniya_CP_a871lq.jpg",
+    linkedin: "",
+    instagram: "",
   },
   {
     id: 11,
@@ -183,6 +203,8 @@ const team = [
     year: "4th Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767456673/Shifa_-_Shifa_Rabiya_qgrore.jpg",
+    linkedin: "",
+    instagram: "",
   },
   {
     id: 12,
@@ -192,6 +214,8 @@ const team = [
     year: "2nd Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767456652/abyy_-_ABIN_BABY_cgvfrq.jpg",
+    linkedin: "https://www.linkedin.com/in/abin-baby-0001-",
+    instagram: "https://www.instagram.com/_abin_baby___",
   },
   {
     id: 13,
@@ -201,6 +225,8 @@ const team = [
     year: "3rd Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767456656/IMG_0222_-_ZANA_NOUSHAD_ncqf2n.jpg",
+    linkedin: "",
+    instagram: "",
   },
   {
     id: 14,
@@ -210,6 +236,8 @@ const team = [
     year: "3rd Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767457303/3e768674-1d4a-41e3-80a1-e4bd003ede6d_-_Akash_Sundar_ndqmoc.jpg",
+    linkedin: "https://www.linkedin.com/in/akashsundarrr",
+    instagram: "https://www.instagram.com/akashsundarr",
   },
   {
     id: 15,
@@ -219,6 +247,8 @@ const team = [
     year: "3rd Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767509910/WhatsApp_Image_2026-01-03_at_11.57.39_PM_u89x8d.jpg",
+    linkedin: "https://www.linkedin.com/in/naveen-v-r-325a17285",
+    instagram: "https://www.instagram.com/naveenvr._",
   },
   {
     id: 16,
@@ -228,8 +258,11 @@ const team = [
     year: "2nd Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767456669/IMG-20250601-WA0095_-_Haripriya_Praveen_qnglbg.jpg",
+    linkedin: "https://www.linkedin.com/in/haripriya-k-praveen-91a1b4330",
+    instagram: "",
   },
 ];
+
 
 const gallery = [
   { 
@@ -283,6 +316,14 @@ const Landing = () => {
     stage: "Idea",
   });
   const [formStatus, setFormStatus] = useState({ type: "", message: "" });
+    const [currentTeamIndex, setCurrentTeamIndex] = useState(0);
+
+      React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTeamIndex((prev) => (prev + 1) % team.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -691,7 +732,6 @@ const Landing = () => {
                 </div>
               </div>
 
-              {/* Scroll indicator - Hidden on mobile */}
               {index < projects.length - 1 && (
                 <div className="hidden md:block absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center">
                   <p className={`text-sm mb-2 ${project.bgImage ? 'text-white' : 'text-gray-600'}`}>
@@ -705,92 +745,103 @@ const Landing = () => {
         ))}
       </section>
 
-     {/* Team Section */}
-      <section id="team" className="py-20 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
+     {/* Team Section  */}
+      <section id="team" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-[#101827] mb-4 text-center">Executive Team</h2>
           <p className="text-center text-gray-600 mb-12 text-lg">Meet the leaders driving innovation at CEC</p>
           
-          {/* Auto-scrolling carousel with manual control */}
           <div className="relative">
+            <div className="flex justify-center gap-2 mb-8">
+              {team.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentTeamIndex(idx)}
+                  className={`h-2 rounded-full transition-all ${
+                    idx === currentTeamIndex 
+                      ? 'w-8 bg-[#101827]' 
+                      : 'w-2 bg-gray-300 hover:bg-gray-400'
+                  }`}
+                />
+              ))}
+            </div>
+
             <div className="overflow-hidden">
-              <div className="flex gap-6 team-scroll-container">
-                {/* First set */}
-                {team.map(member => (
-                  <div key={`first-${member.id}`} className="flex-shrink-0 w-72 bg-[#f9fafb] p-6 rounded-2xl hover:shadow-lg transition-all text-center border border-gray-200">
-                    <div className="w-32 h-32 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full mx-auto mb-6 overflow-hidden flex items-center justify-center">
-                      {member.image ? (
-                        <img 
-                          src={member.image} 
-                          alt={member.name}
-                          className="w-full h-full object-cover"
-                        />
-                      ) : (
-                        <Users className="h-16 w-16 text-white" />
-                      )}
-                    </div>
-                    <h3 className="text-xl font-bold text-[#101827] mb-2">{member.name}</h3>
-                    <p className="text-[#101827] font-semibold mb-1">{member.role}</p>
-                    <p className="text-gray-600 text-sm mb-4">{member.department} • {member.year}</p>
-                    <div className="flex justify-center gap-3">
-                      <button className="p-2 hover:bg-gray-200 rounded-full transition-colors">
-                        <Linkedin className="h-5 w-5 text-[#101827]" />
-                      </button>
-                    </div>
-                  </div>
-                ))}
-                {/* Duplicate set for seamless loop */}
-                {team.map(member => (
-                  <div key={`second-${member.id}`} className="flex-shrink-0 w-72 bg-[#f9fafb] p-6 rounded-2xl hover:shadow-lg transition-all text-center border border-gray-200">
-                    <div className="w-32 h-32 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full mx-auto mb-6 overflow-hidden flex items-center justify-center">
-                      {member.image ? (
-                        <img 
-                          src={member.image} 
-                          alt={member.name}
-                          className="w-full h-full object-cover"
-                        />
-                      ) : (
-                        <Users className="h-16 w-16 text-white" />
-                      )}
-                    </div>
-                    <h3 className="text-xl font-bold text-[#101827] mb-2">{member.name}</h3>
-                    <p className="text-[#101827] font-semibold mb-1">{member.role}</p>
-                    <p className="text-gray-600 text-sm mb-4">{member.department} • {member.year}</p>
-                    <div className="flex justify-center gap-3">
-                      <button className="p-2 hover:bg-gray-200 rounded-full transition-colors">
-                        <Linkedin className="h-5 w-5 text-[#101827]" />
-                      </button>
+              <div 
+                className="flex transition-transform duration-700 ease-out"
+                style={{ 
+                  transform: `translateX(-${currentTeamIndex * 100}%)`,
+                }}
+              >
+                {team.map((member, idx) => (
+                  <div 
+                    key={member.id} 
+                    className="w-full flex-shrink-0 px-4"
+                  >
+                    <div className="max-w-md mx-auto bg-[#f9fafb] p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all text-center border border-gray-200">
+                      <div className="w-40 h-40 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full mx-auto mb-6 overflow-hidden flex items-center justify-center">
+                        {member.image ? (
+                          <img 
+                            src={member.image} 
+                            alt={member.name}
+                            className="w-full h-full object-cover"
+                          />
+                        ) : (
+                          <Users className="h-20 w-20 text-white" />
+                        )}
+                      </div>
+                      <h3 className="text-2xl font-bold text-[#101827] mb-2">{member.name}</h3>
+                      <p className="text-[#101827] font-semibold mb-2 text-lg">{member.role}</p>
+                      <p className="text-gray-600 mb-6">{member.department} • {member.year}</p>
+                      <div className="flex justify-center gap-4">
+                        {member.linkedin && (
+                          <a
+                            href={member.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-3 bg-gray-200 hover:bg-[#0077b5] hover:text-white rounded-full transition-all"
+                          >
+                            <Linkedin className="h-6 w-6" />
+                          </a>
+                        )}
+                        {member.instagram && (
+                          <a
+                            href={member.instagram}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-3 bg-gray-200 hover:bg-gradient-to-r hover:from-purple-500 hover:via-pink-500 hover:to-orange-500 hover:text-white rounded-full transition-all"
+                          >
+                            <Instagram className="h-6 w-6" />
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-            
-            {/* Scroll indicator */}
-            <div className="text-center mt-4">
-              <p className="text-gray-500 text-sm">Hover to pause • Auto-scrolling</p>
+
+            <button
+              onClick={() => setCurrentTeamIndex((prev) => (prev - 1 + team.length) % team.length)}
+              className="absolute left-0 top-1/2 -translate-y-1/2 bg-white hover:bg-[#101827] text-[#101827] hover:text-white p-3 rounded-full shadow-lg transition-all z-10"
+            >
+              <ChevronRight className="h-6 w-6 rotate-180" />
+            </button>
+            <button
+              onClick={() => setCurrentTeamIndex((prev) => (prev + 1) % team.length)}
+              className="absolute right-0 top-1/2 -translate-y-1/2 bg-white hover:bg-[#101827] text-[#101827] hover:text-white p-3 rounded-full shadow-lg transition-all z-10"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </button>
+
+            {/* Progress Indicator */}
+            <div className="text-center mt-6">
+              <p className="text-gray-500 text-sm">
+                {currentTeamIndex + 1} / {team.length} 
+              </p>
             </div>
           </div>
         </div>
-        
-        <style>{`
-          @keyframes scrollTeam {
-            0% {
-              transform: translateX(0);
-            }
-            100% {
-              transform: translateX(-50%);
-            }
-          }
-          
-          .team-scroll-container {
-            animation: scrollTeam 27s linear infinite;
-          }
-          
-          .team-scroll-container:hover {
-            animation-play-state: paused;
-          }
-        `}</style>
       </section>
 
      {/* Gallery Section */}

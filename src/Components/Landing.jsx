@@ -705,32 +705,23 @@ const Landing = () => {
         ))}
       </section>
 
-      {/* Team Section */}
-      <section id="team" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+     {/* Team Section */}
+      <section id="team" className="py-20 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#101827] mb-4 text-center">
-            Executive Team
-          </h2>
-          <p className="text-center text-gray-600 mb-12 text-lg">
-            Meet the leaders driving innovation at CEC
-          </p>
-
-          {/* Manual scrolling carousel */}
+          <h2 className="text-4xl md:text-5xl font-bold text-[#101827] mb-4 text-center">Executive Team</h2>
+          <p className="text-center text-gray-600 mb-12 text-lg">Meet the leaders driving innovation at CEC</p>
+          
+          {/* Auto-scrolling carousel with manual control */}
           <div className="relative">
-            <div
-              className="overflow-x-auto scrollbar-hide pb-8"
-              style={{ scrollBehavior: "smooth" }}
-            >
-              <div className="flex gap-6 w-max px-4">
-                {team.map((member) => (
-                  <div
-                    key={member.id}
-                    className="flex-shrink-0 w-72 bg-[#f9fafb] p-6 rounded-2xl hover:shadow-lg transition-all text-center border border-gray-200"
-                  >
+            <div className="overflow-hidden">
+              <div className="flex gap-6 team-scroll-container">
+                {/* First set */}
+                {team.map(member => (
+                  <div key={`first-${member.id}`} className="flex-shrink-0 w-72 bg-[#f9fafb] p-6 rounded-2xl hover:shadow-lg transition-all text-center border border-gray-200">
                     <div className="w-32 h-32 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full mx-auto mb-6 overflow-hidden flex items-center justify-center">
                       {member.image ? (
-                        <img
-                          src={member.image}
+                        <img 
+                          src={member.image} 
                           alt={member.name}
                           className="w-full h-full object-cover"
                         />
@@ -738,15 +729,33 @@ const Landing = () => {
                         <Users className="h-16 w-16 text-white" />
                       )}
                     </div>
-                    <h3 className="text-xl font-bold text-[#101827] mb-2">
-                      {member.name}
-                    </h3>
-                    <p className="text-[#101827] font-semibold mb-1">
-                      {member.role}
-                    </p>
-                    <p className="text-gray-600 text-sm mb-4">
-                      {member.department} • {member.year}
-                    </p>
+                    <h3 className="text-xl font-bold text-[#101827] mb-2">{member.name}</h3>
+                    <p className="text-[#101827] font-semibold mb-1">{member.role}</p>
+                    <p className="text-gray-600 text-sm mb-4">{member.department} • {member.year}</p>
+                    <div className="flex justify-center gap-3">
+                      <button className="p-2 hover:bg-gray-200 rounded-full transition-colors">
+                        <Linkedin className="h-5 w-5 text-[#101827]" />
+                      </button>
+                    </div>
+                  </div>
+                ))}
+                {/* Duplicate set for seamless loop */}
+                {team.map(member => (
+                  <div key={`second-${member.id}`} className="flex-shrink-0 w-72 bg-[#f9fafb] p-6 rounded-2xl hover:shadow-lg transition-all text-center border border-gray-200">
+                    <div className="w-32 h-32 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full mx-auto mb-6 overflow-hidden flex items-center justify-center">
+                      {member.image ? (
+                        <img 
+                          src={member.image} 
+                          alt={member.name}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <Users className="h-16 w-16 text-white" />
+                      )}
+                    </div>
+                    <h3 className="text-xl font-bold text-[#101827] mb-2">{member.name}</h3>
+                    <p className="text-[#101827] font-semibold mb-1">{member.role}</p>
+                    <p className="text-gray-600 text-sm mb-4">{member.department} • {member.year}</p>
                     <div className="flex justify-center gap-3">
                       <button className="p-2 hover:bg-gray-200 rounded-full transition-colors">
                         <Linkedin className="h-5 w-5 text-[#101827]" />
@@ -756,23 +765,30 @@ const Landing = () => {
                 ))}
               </div>
             </div>
-
+            
             {/* Scroll indicator */}
             <div className="text-center mt-4">
-              <p className="text-gray-500 text-sm">
-                ← Scroll to view all team members →
-              </p>
+              <p className="text-gray-500 text-sm">Hover to pause • Auto-scrolling</p>
             </div>
           </div>
         </div>
-
+        
         <style>{`
-          .scrollbar-hide::-webkit-scrollbar {
-            display: none;
+          @keyframes scrollTeam {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
           }
-          .scrollbar-hide {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
+          
+          .team-scroll-container {
+            animation: scrollTeam 27s linear infinite;
+          }
+          
+          .team-scroll-container:hover {
+            animation-play-state: paused;
           }
         `}</style>
       </section>

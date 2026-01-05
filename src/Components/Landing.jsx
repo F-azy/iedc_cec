@@ -117,7 +117,7 @@ const team = [
     id: 4,
     name: "Asif Subair",
     role: "CPO",
-    department: "Mechanical",
+    department: "Computer Science",
     year: "3rd Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767456656/asif_id_card_-_ASIF_SUBAIR_uxjovh.jpg",
@@ -136,7 +136,7 @@ const team = [
     name: "Athul P",
     role: "CCO",
     department: "Computer Science",
-    year: "2nd Year",
+    year: "4th Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767456680/1000331524_-_Film_d3wqhw.jpg",
   },
@@ -144,7 +144,7 @@ const team = [
     id: 7,
     name: "Elisha Varghese",
     role: "CAO",
-    department: "Mechanical",
+    department: "Computer Science",
     year: "4th Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767456665/IMG-20250325-WA0072_1_-_Elisha_Varghese_mk1964.jpg",
@@ -153,7 +153,7 @@ const team = [
     id: 8,
     name: "Mohammed Ashkar N A",
     role: "CIO",
-    department: "Civil",
+    department: "Computer Science",
     year: "3rd Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767456674/IMG-20250607-WA0262_-_Mohammed_Ashkar_N.A_evr6s7.jpg",
@@ -162,7 +162,7 @@ const team = [
     id: 9,
     name: "Reshmi S Panicker",
     role: "WEL",
-    department: "Electronics",
+    department: "Computer Science",
     year: "4th Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767456659/IMG-20240410-WA0015_-_Reshmi_S_Panicker_byqynp.jpg",
@@ -172,7 +172,7 @@ const team = [
     name: "CP Saniya",
     role: "COO",
     department: "Computer Science",
-    year: "2nd Year",
+    year: "4th Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767456656/IMG_20250531_231846_-_Saniya_CP_a871lq.jpg",
   },
@@ -180,8 +180,8 @@ const team = [
     id: 11,
     name: "Shifa Rabiya",
     role: "CCO",
-    department: "Mechanical",
-    year: "3rd Year",
+    department: "Computer Science",
+    year: "4th Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767456673/Shifa_-_Shifa_Rabiya_qgrore.jpg",
   },
@@ -189,8 +189,8 @@ const team = [
     id: 12,
     name: "Abin Baby",
     role: "CSO",
-    department: "Civil",
-    year: "4th Year",
+    department: "Computer Science",
+    year: "2nd Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767456652/abyy_-_ABIN_BABY_cgvfrq.jpg",
   },
@@ -198,7 +198,7 @@ const team = [
     id: 13,
     name: "Zana Noushad",
     role: "BML",
-    department: "Electronics",
+    department: "Computer Science",
     year: "3rd Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767456656/IMG_0222_-_ZANA_NOUSHAD_ncqf2n.jpg",
@@ -207,7 +207,7 @@ const team = [
     id: 14,
     name: "Akash Sundar",
     role: "CMO",
-    department: "Electronics",
+    department: "Computer Science",
     year: "3rd Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767457303/3e768674-1d4a-41e3-80a1-e4bd003ede6d_-_Akash_Sundar_ndqmoc.jpg",
@@ -226,7 +226,7 @@ const team = [
     name: "Haripriya K Parveen",
     role: "SMH",
     department: "Electronics",
-    year: "3rd Year",
+    year: "2nd Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767456669/IMG-20250601-WA0095_-_Haripriya_Praveen_qnglbg.jpg",
   },

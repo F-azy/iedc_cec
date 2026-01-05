@@ -78,7 +78,6 @@ const projects = [
     team: "Faseen Anvar – Founder & CTO (IEDC CEC)",
     website: "https://availible.in",
     instagram: "https://instagram.com/availible.in_",
-    linkedin: "https://linkedin.com/company/availible",
     image: "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767514089/Screenshot_2025-12-27_153050_fmc6p8.png", 
     bgImage: "" 
   }
@@ -561,7 +560,7 @@ const Landing = () => {
                 <p className="text-gray-600 mb-4">{event.description}</p>
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-gray-500">{new Date(event.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
-                  <button 
+                  {/* <button 
                     onClick={() => {
                       setSelectedGalleryCategory(event.category);
                       scrollToSection('gallery');
@@ -569,7 +568,7 @@ const Landing = () => {
                     className="text-[#101827] font-semibold hover:underline flex items-center gap-1"
                   >
                     View Gallery <ChevronRight className="h-4 w-4" />
-                  </button>
+                  </button> */}
                 </div>
               </div>
             ))}

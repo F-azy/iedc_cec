@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import {
   Menu,
@@ -221,7 +220,7 @@ const team = [
     role: "CMO",
     department: "Computer Science",
     year: "3rd Year",
-    image: "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767457303/3e768674-1d4a-41e3-80a1-e4bd003ede6d_-_Akash_Sundar_ndqmoc.jpg",
+    image: "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767631360/WhatsApp_Image_2026-01-05_at_8.32.59_PM_epmzkl.jpg",
     linkedin: "https://www.linkedin.com/in/akashsundarrr",
     instagram: "https://www.instagram.com/akashsundarr",
   },
@@ -301,6 +300,60 @@ const Landing = () => {
   });
   const [formStatus, setFormStatus] = useState({ type: "", message: "" });
   const [currentTeamIndex, setCurrentTeamIndex] = useState(0);
+  const [showMembershipForm, setShowMembershipForm] = useState(false);
+  const WHATSAPP_GROUP_URL = import.meta.env.VITE_WHATSAPP_GROUP_URL;
+
+const [membershipData, setMembershipData] = useState({
+  name: "",
+  email: "",
+  phone: "",
+  department: "",
+  semester: "",
+  interest: "",
+  reason: "",
+  ideas: ""
+});
+const [membershipStatus, setMembershipStatus] = useState({ 
+  type: "", 
+  message: "", 
+  showWhatsApp: false 
+});
+
+const handleMembershipChange = (e) => {
+  setMembershipData({ ...membershipData, [e.target.name]: e.target.value });
+};
+
+const handleMembershipSubmit = async (e) => {
+  e.preventDefault();
+  setMembershipStatus({ type: "loading", message: "Submitting...", showWhatsApp: false });
+
+  try {
+    const endpoint = import.meta.env.VITE_GOOGLE_APPS_SCRIPT_URL || "YOUR_APPS_SCRIPT_URL";
+
+    await fetch(endpoint, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        type: "membership",
+        ...membershipData,
+        timestamp: new Date().toISOString()
+      }),
+    });
+
+    setMembershipStatus({
+      type: "success",
+      message: "Application submitted successfully!",
+      showWhatsApp: true
+    });
+  } catch (error) {
+    setMembershipStatus({
+      type: "error",
+      message: "Failed to submit. Please try again.",
+      showWhatsApp: false
+    });
+  }
+};
 
   React.useEffect(() => {
     const interval = setInterval(() => {
@@ -318,7 +371,7 @@ const Landing = () => {
     setFormStatus({ type: "loading", message: "Submitting..." });
 
     try {
-      const endpoint = import.meta.env.VITE_GOOGLE_APPS_SCRIPT_URL || "YOUR_APPS_SCRIPT_URL";
+      const endpoint = import.meta.env.VITE_GOOGLE_APPS_SCRIPT_URL || "URL";
 
       const response = await fetch(endpoint, {
         method: "POST",
@@ -355,15 +408,21 @@ const Landing = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#f9fafb]">
+<div className="min-h-screen bg-[#f9fafb] overflow-x-hidden">
       {/* Navigation */}
       <nav className="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <Rocket className="h-8 w-8 text-[#306bdd]" />
-              <span className="ml-2 text-xl font-bold text-black">IEDC CEC</span>
-            </div>
+        <div className="flex items-center">
+  <div className="h-12 w-12 bg-gradient-to-br from-[#306bdd] to-blue-700 rounded-full flex items-center justify-center p-2">
+    <img 
+      src="https://res.cloudinary.com/dki3vvr8y/image/upload/v1767634842/IEDC_CEC_upscaled_tygkaq.png" 
+      alt="IEDC CEC Logo" 
+      className="h-full w-full object-contain" 
+    />
+  </div>
+  <span className="ml-2 text-xl font-bold text-black">IEDC CEC</span>
+</div>
 
             <div className="hidden md:flex space-x-8">
               {["About", "Events", "Projects", "Team", "Gallery", "Submit Idea"].map((item) => (
@@ -650,7 +709,6 @@ const Landing = () => {
         </p>
         
         <div className="relative">
-          {/* Navigation Dots */}
           <div className="flex justify-center gap-2 mb-8">
             {team.map((_, idx) => (
               <button
@@ -665,7 +723,6 @@ const Landing = () => {
             ))}
           </div>
 
-          {/* Team Cards Container */}
           <div className="overflow-hidden">
             <div 
               className="flex transition-transform duration-700 ease-out"
@@ -727,7 +784,6 @@ const Landing = () => {
             </div>
           </div>
 
-          {/* Navigation Arrows */}
           <button
             onClick={() => setCurrentTeamIndex((prev) => (prev - 1 + team.length) % team.length)}
             className="absolute left-0 top-1/2 -translate-y-1/2 bg-white hover:bg-[#306bdd] text-black hover:text-white p-3 rounded-full shadow-lg transition-all z-10 border-2 border-gray-200"
@@ -741,7 +797,6 @@ const Landing = () => {
             <ChevronRight className="h-6 w-6" />
           </button>
 
-          {/* Progress Indicator */}
           <div className="text-center mt-6">
             <p className="text-gray-600 text-sm font-medium">
               {currentTeamIndex + 1} / {team.length}
@@ -948,24 +1003,240 @@ const Landing = () => {
 </section>
 
 {/* Join IEDC Section */}
-<section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-black to-[#306bdd]">
-  <div className="max-w-4xl mx-auto text-center">
-    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-      Join the Innovation Journey
-    </h2>
-    <p className="text-xl text-gray-200 mb-10">
-      Be part of a vibrant community of innovators, entrepreneurs, and
-      changemakers. Whether you have an idea or just the passion to learn,
-      there's a place for you at IEDC CEC.
+<section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#101827] to-gray-800">
+  <div className="max-w-4xl mx-auto">
+    {!showMembershipForm ? (
+      <div className="text-center">
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          Join the Innovation Journey
+        </h2>
+        <p className="text-xl text-gray-300 mb-10">
+          Be part of a vibrant community of innovators, entrepreneurs, and
+          changemakers. Whether you have an idea or just the passion to learn,
+          there's a place for you at IEDC CEC.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <button 
+            onClick={() => setShowMembershipForm(true)}
+            className="bg-white text-[#101827] px-8 py-4 rounded-lg hover:bg-gray-100 transition-all font-semibold text-lg"
+          >
+            Become a Member
+          </button>
+          <button className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-[#101827] transition-all font-semibold text-lg">
+            Volunteer with IEDC
+          </button>
+        </div>
+      </div>
+    ) : (
+      // Membership Form
+      <div>
+        <div className="text-center mb-8">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Become a Member
+          </h2>
+          <p className="text-xl text-gray-300">
+            Join IEDC CEC and start your innovation journey today
+          </p>
+        </div>
+
+        <form
+          onSubmit={handleMembershipSubmit}
+          className="bg-white p-8 rounded-2xl shadow-2xl"
+        >
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label className="block text-black font-semibold mb-2">
+                Full Name *
+              </label>
+              <input
+                type="text"
+                name="name"
+                value={membershipData.name}
+                onChange={handleMembershipChange}
+                required
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#306bdd] bg-white text-black"
+              />
+            </div>
+            <div>
+              <label className="block text-black font-semibold mb-2">
+                Email *
+              </label>
+              <input
+                type="email"
+                name="email"
+                value={membershipData.email}
+                onChange={handleMembershipChange}
+                required
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#306bdd] bg-white text-black"
+              />
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label className="block text-black font-semibold mb-2">
+                Phone Number *
+              </label>
+              <input
+                type="tel"
+                name="phone"
+                value={membershipData.phone}
+                onChange={handleMembershipChange}
+                required
+                pattern="[0-9]{10}"
+                placeholder="10-digit number"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#306bdd] bg-white text-black"
+              />
+            </div>
+            <div>
+              <label className="block text-black font-semibold mb-2">
+                Department *
+              </label>
+              <select
+                name="department"
+                value={membershipData.department}
+                onChange={handleMembershipChange}
+                required
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#306bdd] bg-white text-black"
+              >
+                <option value="">Select Department</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Mechanical">Mechanical</option>
+                <option value="Civil">Civil</option>
+                <option value="Electrical">Electrical</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label className="block text-black font-semibold mb-2">
+                Semester *
+              </label>
+              <select
+                name="semester"
+                value={membershipData.semester}
+                onChange={handleMembershipChange}
+                required
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#306bdd] bg-white text-black"
+              >
+                <option value="">Select Semester</option>
+                <option value="S1">S1</option>
+                <option value="S2">S2</option>
+                <option value="S3">S3</option>
+                <option value="S4">S4</option>
+                <option value="S5">S5</option>
+                <option value="S6">S6</option>
+                <option value="S7">S7</option>
+                <option value="S8">S8</option>
+              </select>
+            </div>
+            <div>
+              <label className="block text-black font-semibold mb-2">
+                Area of Interest *
+              </label>
+              <select
+                name="interest"
+                value={membershipData.interest}
+                onChange={handleMembershipChange}
+                required
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#306bdd] bg-white text-black"
+              >
+                <option value="">Select Interest</option>
+                <option value="Technology/Development">Technology/Development</option>
+                <option value="Design/UI-UX">Design/UI-UX</option>
+                <option value="Business/Marketing">Business/Marketing</option>
+                <option value="Content Creation">Content Creation</option>
+                <option value="Event Management">Event Management</option>
+                <option value="Finance">Finance</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="mb-6">
+            <label className="block text-black font-semibold mb-2">
+              Why do you want to join IEDC? *
+            </label>
+            <textarea
+              name="reason"
+              value={membershipData.reason}
+              onChange={handleMembershipChange}
+              required
+              rows="4"
+              placeholder="Tell us about your motivation and what you hope to achieve..."
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#306bdd] bg-white text-black"
+            />
+          </div>
+
+          <div className="mb-6">
+            <label className="block text-black font-semibold mb-2">
+              Do you have any startup ideas or projects? (Optional)
+            </label>
+            <textarea
+              name="ideas"
+              value={membershipData.ideas}
+              onChange={handleMembershipChange}
+              rows="3"
+              placeholder="Share any ideas or projects you're working on..."
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#306bdd] bg-white text-black"
+            />
+          </div>
+
+     {membershipStatus.type === "success" && membershipStatus.showWhatsApp && (
+  <div className="mb-6 p-6 bg-green-50 border-2 border-green-500 rounded-lg text-center">
+    <p className="text-green-800 font-semibold mb-4 text-lg">
+       Welcome to IEDC CEC!
     </p>
-    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-      <button className="bg-white text-black px-8 py-4 rounded-lg hover:bg-gray-100 transition-all font-semibold text-lg">
-        Become a Member
-      </button>
-      <button className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-[#306bdd] transition-all font-semibold text-lg">
-        Volunteer with IEDC
-      </button>
-    </div>
+    <p className="text-gray-700 mb-4">
+      Join our WhatsApp community to stay updated with events, workshops, and connect with fellow members.
+    </p>
+    <a
+  href={WHATSAPP_GROUP_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-all font-semibold"
+    >
+      📱 Join WhatsApp Group
+    </a>
+    <p className="text-gray-600 text-sm mt-3">
+      Using: +91 {membershipData.phone}
+    </p>
+  </div>
+)}
+
+          <div className="flex gap-4">
+            <button
+              type="button"
+              onClick={() => {
+                setShowMembershipForm(false);
+                setMembershipStatus({ type: "", message: "", showWhatsApp: false });
+                setMembershipData({
+                  name: "",
+                  email: "",
+                  phone: "",
+                  department: "",
+                  semester: "",
+                  interest: "",
+                  reason: "",
+                  ideas: ""
+                });
+              }}
+              className="flex-1 bg-gray-200 text-black px-6 py-4 rounded-lg hover:bg-gray-300 transition-all font-semibold text-lg"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              disabled={membershipStatus.type === "loading"}
+              className="flex-1 bg-[#306bdd] text-white px-6 py-4 rounded-lg hover:bg-blue-700 transition-all font-semibold text-lg disabled:opacity-50"
+            >
+              {membershipStatus.type === "loading" ? "Submitting..." : "Submit Application"}
+            </button>
+          </div>
+        </form>
+      </div>
+    )}
   </div>
 </section>
 
@@ -973,7 +1244,6 @@ const Landing = () => {
 <footer className="bg-black text-white py-12 px-4 sm:px-6 lg:px-8">
   <div className="max-w-7xl mx-auto">
     <div className="grid md:grid-cols-4 gap-8 mb-8">
-      {/* Brand */}
       <div>
         <div className="flex items-center mb-4">
           <Rocket className="h-8 w-8 text-[#306bdd]" />
@@ -1031,18 +1301,13 @@ const Landing = () => {
           </div>
 
           <div className="flex items-center gap-4 pt-3">
-            <a href="#" className="hover:text-[#306bdd] transition-colors">
+            <a href="https://www.linkedin.com/company/iedc-cec" className="hover:text-[#306bdd] transition-colors">
               <Linkedin className="h-5 w-5" />
             </a>
-            <a href="#" className="hover:text-[#306bdd] transition-colors">
+            <a href="https://www.instagram.com/iedc.cec?igsh=MTliNndjY2hienh4MA==" className="hover:text-[#306bdd] transition-colors">
               <Instagram className="h-5 w-5" />
             </a>
-            <a href="#" className="hover:text-[#306bdd] transition-colors">
-              <Twitter className="h-5 w-5" />
-            </a>
-            <a href="#" className="hover:text-[#306bdd] transition-colors">
-              <Github className="h-5 w-5" />
-            </a>
+
           </div>
         </div>
       </div>

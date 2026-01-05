@@ -133,22 +133,6 @@ const team = [
   },
   {
     id: 6,
-    name: "Sneha Krishnan",
-    role: "Marketing Lead",
-    department: "Civil",
-    year: "2nd Year",
-    image: "",
-  },
-  {
-    id: 7,
-    name: "Rahul Varma",
-    role: "Finance Head",
-    department: "Electronics",
-    year: "3rd Year",
-    image: "",
-  },
-  {
-    id: 6,
     name: "Athul P",
     role: "CCO",
     department: "Computer Science",
@@ -251,38 +235,38 @@ const team = [
 const gallery = [
   { 
     id: 1, 
-    category: "Events", 
-    alt: "Startup pitch competition",
+    category: "", 
+    alt: "",
     image: "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767546323/WhatsApp_Image_2026-01-04_at_10.33.55_PM_1_rom5kr.jpg"
   },
   { 
     id: 2, 
-    category: "Events", 
-    alt: "Startup pitch competition",
+    category: "", 
+    alt: "",
     image: "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767546322/WhatsApp_Image_2026-01-04_at_10.33.55_PM_2_jln5qh.jpg"
   },
   { 
     id: 3, 
-    category: "Events", 
-    alt: "Startup pitch competition",
+    category: "", 
+    alt: "",
     image: "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767546323/WhatsApp_Image_2026-01-04_at_10.33.55_PM_w34xvf.jpg"
   },
   { 
     id: 4, 
-    category: "Events", 
-    alt: "Startup pitch competition",
+    category: "", 
+    alt: "",
     image: "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767546323/WhatsApp_Image_2026-01-04_at_10.34.05_PM_abr3bw.jpg"
   },
   { 
     id: 5, 
-    category: "Events", 
-    alt: "Startup pitch competition",
+    category: "", 
+    alt: "",
     image: "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767546323/WhatsApp_Image_2026-01-04_at_10.34.04_PM_tkmf5z.jpg"
   },
   { 
     id: 6, 
-    category: "Events", 
-    alt: "Startup pitch competition",
+    category: "", 
+    alt: "",
     image: "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767547238/WhatsApp_Image_2026-01-04_at_10.50.13_PM_nr0wuu.jpg"
   }
 ];
@@ -452,21 +436,24 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
+
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { value: "40+", label: "Active Members" },
-              { value: "25+", label: "Projects Launched" },
-              { value: "40+", label: "Events Conducted" },
-              { value: "5+", label: "Startups Incubated" },
+              { value: '40+', label: 'Active Members', icon: Users },
+              { value: '20+', label: 'Events Conducted', icon: Calendar },
+              { value: '100+', label: 'Students Impacted', icon: Award },
+              { value: '2', label: 'Active Startups', icon: Rocket }
             ].map((stat, idx) => (
-              <div key={idx} className="text-center">
+              <div key={idx} className="text-center group">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-[#f9fafb] rounded-full mb-4 group-hover:bg-[#101827] transition-colors">
+                  <stat.icon className="h-8 w-8 text-[#101827] group-hover:text-white transition-colors" />
+                </div>
                 <div className="text-4xl md:text-5xl font-bold text-[#101827] mb-2">
                   {stat.value}
                 </div>
-                <div className="text-gray-600">{stat.label}</div>
+                <div className="text-gray-600 font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -525,10 +512,10 @@ const Landing = () => {
             Events & Programs
           </h2>
 
-          <h3 className="text-2xl font-bold text-[#101827] mb-6">
+          {/* <h3 className="text-2xl font-bold text-[#101827] mb-6">
             Upcoming Events
-          </h3>
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
+          </h3> */}
+          {/* <div className="grid md:grid-cols-2 gap-6 mb-12">
             {events
               .filter((e) => e.status === "upcoming")
               .map((event) => (
@@ -560,43 +547,32 @@ const Landing = () => {
                   </div>
                 </div>
               ))}
-          </div>
+          </div> */}
 
-          <h3 className="text-2xl font-bold text-[#101827] mb-6">
-            Past Events
-          </h3>
+          <h3 className="text-2xl font-bold text-[#101827] mb-6">Past Events</h3>
           <div className="grid md:grid-cols-2 gap-6">
-            {events
-              .filter((e) => e.status === "past")
-              .map((event) => (
-                <div
-                  key={event.id}
-                  className="bg-[#f9fafb] p-6 rounded-xl hover:shadow-lg transition-shadow border border-gray-200"
-                >
-                  <div className="flex justify-between items-start mb-4">
-                    <span className="bg-gray-300 text-gray-700 px-3 py-1 rounded-full text-sm">
-                      {event.category}
-                    </span>
-                    <Calendar className="h-5 w-5 text-gray-600" />
-                  </div>
-                  <h4 className="text-xl font-bold text-[#101827] mb-2">
-                    {event.title}
-                  </h4>
-                  <p className="text-gray-600 mb-4">{event.description}</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-500">
-                      {new Date(event.date).toLocaleDateString("en-US", {
-                        month: "long",
-                        day: "numeric",
-                        year: "numeric",
-                      })}
-                    </span>
-                    <button className="text-[#101827] font-semibold hover:underline flex items-center gap-1">
-                      View Gallery <ChevronRight className="h-4 w-4" />
-                    </button>
-                  </div>
+            {events.filter(e => e.status === 'past').map(event => (
+              <div key={event.id} className="bg-[#f9fafb] p-6 rounded-xl hover:shadow-lg transition-shadow border border-gray-200">
+                <div className="flex justify-between items-start mb-4">
+                  <span className="bg-gray-300 text-gray-700 px-3 py-1 rounded-full text-sm">{event.category}</span>
+                  <Calendar className="h-5 w-5 text-gray-600" />
                 </div>
-              ))}
+                <h4 className="text-xl font-bold text-[#101827] mb-2">{event.title}</h4>
+                <p className="text-gray-600 mb-4">{event.description}</p>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-gray-500">{new Date(event.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+                  <button 
+                    onClick={() => {
+                      setSelectedGalleryCategory(event.category);
+                      scrollToSection('gallery');
+                    }}
+                    className="text-[#101827] font-semibold hover:underline flex items-center gap-1"
+                  >
+                    View Gallery <ChevronRight className="h-4 w-4" />
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -1075,7 +1051,7 @@ const Landing = () => {
               <div className="space-y-3 text-sm text-gray-400">
                 <div className="flex items-center gap-2">
                   <Mail className="h-4 w-4" />
-                  <span>iedc@cecherthala.ac.in</span>
+                  <span>iedc@cectl.ac.in</span>
                 </div>
 
                 <div className="flex items-center gap-4 pt-3">

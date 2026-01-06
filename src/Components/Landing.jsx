@@ -88,7 +88,6 @@ const projects = [
     bgImage: "",
   },
 ];
-
 const team = [
   {
     id: 1,
@@ -109,8 +108,8 @@ const team = [
     year: "4th Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767456655/IMG_7096_-_Luthfi_Tp_qdfbt1.jpg",
-    linkedin: "",
-    instagram: "",
+    linkedin: "https://www.linkedin.com/in/luthfi-tp",
+    instagram: "https://www.instagram.com/simply.lutherr",
   },
   {
     id: 3,
@@ -142,8 +141,8 @@ const team = [
     year: "4th Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767456670/IMG-20250405-WA0033_-_Anntheres_Thomas_xcthrv.jpg",
-    linkedin: "",
-    instagram: "",
+    linkedin: "https://www.linkedin.com/in/anntheres-thomas-301b1a254",
+    instagram: "https://www.instagram.com/a_nn.theres",
   },
   {
     id: 6,
@@ -186,7 +185,7 @@ const team = [
     year: "4th Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767456659/IMG-20240410-WA0015_-_Reshmi_S_Panicker_byqynp.jpg",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/reshmi-s-panicker-43a80423a",
     instagram: "https://www.instagram.com/__sreekutttyy__",
   },
   {
@@ -197,8 +196,8 @@ const team = [
     year: "4th Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767456656/IMG_20250531_231846_-_Saniya_CP_a871lq.jpg",
-    linkedin: "",
-    instagram: "",
+    linkedin: "https://www.linkedin.com/in/cp-saniya-86180b31b",
+    instagram: "https://www.instagram.com/_saniya_prasannan_",
   },
   {
     id: 11,
@@ -208,8 +207,8 @@ const team = [
     year: "4th Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767456673/Shifa_-_Shifa_Rabiya_qgrore.jpg",
-    linkedin: "",
-    instagram: "",
+    linkedin: "https://www.linkedin.com/in/shifa-rabiya-4871b2255",
+    instagram: "https://www.instagram.com/shifa_rabiyaa",
   },
   {
     id: 12,
@@ -230,8 +229,8 @@ const team = [
     year: "3rd Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767456656/IMG_0222_-_ZANA_NOUSHAD_ncqf2n.jpg",
-    linkedin: "",
-    instagram: "",
+    linkedin: "https://www.linkedin.com/in/zana-noushad-24123b293",
+    instagram: "https://www.instagram.com/za.naa._",
   },
   {
     id: 14,
@@ -1410,7 +1409,6 @@ const Landing = () => {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center mb-4">
-                <Rocket className="h-8 w-8 text-[#306bdd]" />
                 <span className="ml-2 text-xl font-bold">IEDC CEC</span>
               </div>
               <p className="text-gray-400 text-sm leading-relaxed">

@@ -263,7 +263,7 @@ const team = [
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767456669/IMG-20250601-WA0095_-_Haripriya_Praveen_qnglbg.jpg",
     linkedin: "https://www.linkedin.com/in/haripriya-k-praveen-91a1b4330",
-    instagram: "",
+    instagram: "https://www.instagram.com/__sreekutttyy__/",
   },
 ];
 

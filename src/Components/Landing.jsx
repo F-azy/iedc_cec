@@ -174,7 +174,7 @@ const team = [
     year: "3rd Year",
     image:
       "https://res.cloudinary.com/dki3vvr8y/image/upload/v1767456674/IMG-20250607-WA0262_-_Mohammed_Ashkar_N.A_evr6s7.jpg",
-    linkedin: "https://www.linkedin.com/in/mohammed-ashkar-62400a267",
+    linkedin: "https://www.linkedin.com/in/mohammed-ashkar-n-a-235492393",
     instagram: "https://www.instagram.com/ashkar.ashrf",
   },
   {

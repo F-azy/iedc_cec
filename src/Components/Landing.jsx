@@ -1483,7 +1483,7 @@ const Landing = () => {
           {/* Bottom Bar */}
           <div className="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
             <p>© {new Date().getFullYear()} IEDC CEC. All rights reserved.</p>
-            <p className="mt-2 md:mt-0">Built by IEDC CEC Tech Team</p>
+            <p className="mt-2 md:mt-0">Built by Faseen Anvar (CTO)</p>
           </div>
         </div>
       </footer>
